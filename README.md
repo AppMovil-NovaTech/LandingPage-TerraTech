@@ -2,14 +2,14 @@
 
 ## Description
 
-Landing page for TerraTech, an agricultural solution for managing plots and sensors and viewing soil information. It presents the product's benefits, Pro and Enterprise plans, the NovaTech team, and a demo request form with a simulated loading state. No form data is sent. A soil features section presents moisture, nutrients, and temperature sensors. The terms and conditions modal is provisional: its nine sections contain generic draft terms based on the current informational version.
+Landing page for TerraTech, an agricultural solution for managing plots and sensors and viewing soil information. It presents what the sensor measures (moisture, temperature, and nutrients), the app features, a three-step explanation with app screenshots, Pro and Enterprise plans, the NovaTech team, frequently asked questions, and a demo request form with a simulated loading state. No form data is sent. The terms and conditions modal is provisional: its nine sections contain generic draft terms based on the current informational version.
 
 ## Technologies Used
 
 - **HTML5:** semantic content structure.
 - **CSS3:** responsive layout and interface styling.
 - **JavaScript:** navigation, translations, app screen viewer, and form validation.
-- **Inter and SVG:** typography and icons for the visual identity.
+- **Bricolage Grotesque, Inter, and SVG:** self-hosted WOFF2 typography and icons for the visual identity.
 
 ## Project Structure
 
