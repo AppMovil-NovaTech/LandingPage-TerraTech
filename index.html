@@ -61,7 +61,7 @@
           <li class="reading reading-temperature"><span class="reading-label" data-i18n="soil.temperature">Temperatura</span><strong>22.4 °C</strong></li>
           <li class="reading reading-nitrogen"><span class="reading-label" data-i18n="reading.nitrogen">Nitrógeno</span><strong>38 ppm</strong></li>
         </ul>
-        <figcaption class="readings-note" data-i18n="hero.readingsNote">Lecturas de ejemplo tomadas de la app.</figcaption>
+        <figcaption class="readings-note" data-i18n="hero.readingsNote">Lecturas de ejemplo.</figcaption>
       </figure>
       <div class="hero-copy">
         <h1 data-i18n="hero.title" id="hero-title">Monitorea tu parcela con datos del suelo.</h1>
@@ -82,7 +82,7 @@
       </div>
       <ul class="measures">
         <li class="measure"><p class="measure-unit" aria-hidden="true">%</p><h3 data-i18n="soil.moisture">Humedad</h3><p data-i18n="sensor.moistureText">Consulta el porcentaje de humedad del suelo de tu parcela y la fecha de la última medición registrada por el sensor.</p></li>
-        <li class="measure"><p class="measure-unit" aria-hidden="true">°C</p><h3 data-i18n="soil.temperature">Temperatura</h3><p data-i18n="sensor.temperatureText">Consulta la temperatura del suelo en grados Celsius para evaluar el riesgo de heladas en tu parcela.</p></li>
+        <li class="measure"><p class="measure-unit" aria-hidden="true">°C</p><h3 data-i18n="soil.temperature">Temperatura</h3><p data-i18n="sensor.temperatureText">Consulta la temperatura del suelo de tu parcela en grados Celsius y la fecha de la última medición.</p></li>
         <li class="measure"><p class="measure-unit" aria-hidden="true">ppm</p><h3 data-i18n="soil.nutrients">Nutrientes</h3><p data-i18n="sensor.nutrientsText">Consulta los niveles de nitrógeno, fósforo y potasio del suelo en ppm para orientar la fertilización de tu parcela.</p></li>
       </ul>
     </div>
@@ -97,11 +97,14 @@
       <ul class="feature-list">
           <li><h3 data-i18n="benefit.accessTitle">Registro e inicio de sesión</h3><p data-i18n="benefit.accessText">Crea tu cuenta y accede a la información de tus propias parcelas.</p></li>
           <li><h3 data-i18n="benefit.profileTitle">Perfil y parcelas</h3><p data-i18n="benefit.profileText">Consulta y actualiza tus datos personales y la información de tu terreno.</p></li>
+          <li><h3 data-i18n="benefit.mapTitle">Contorno de la parcela en el mapa</h3><p data-i18n="benefit.mapText">Ubica tu parcela en el mapa y dibuja su contorno; la app calcula su superficie estimada en hectáreas.</p></li>
           <li><h3 data-i18n="benefit.sensorTitle">Registro de sensor</h3><p data-i18n="benefit.sensorText">Asocia un dispositivo válido a tu parcela para consultar sus mediciones.</p></li>
           <li><h3 data-i18n="benefit.plotTitle">Selección de parcela</h3><p data-i18n="benefit.plotText">Elige la parcela que quieres consultar y revisa sus dispositivos asociados.</p></li>
-          <li><h3 data-i18n="benefit.indicatorsTitle">Indicadores del suelo</h3><p data-i18n="benefit.indicatorsText">Consulta las últimas mediciones de humedad, temperatura y nutrientes, con su fecha de actualización.</p></li>
+          <li><h3 data-i18n="benefit.indicatorsTitle">Indicadores del suelo</h3><p data-i18n="benefit.indicatorsText">Consulta las últimas mediciones de humedad, temperatura y nutrientes, con su fecha y un aviso cuando la lectura tiene más de 30 minutos.</p></li>
           <li><h3 data-i18n="benefit.historyTitle">Historial de mediciones</h3><p data-i18n="benefit.historyText">Revisa la humedad de los últimos 7 o 30 días y el detalle de cada lectura.</p></li>
-          <li><h3 data-i18n="benefit.offlineTitle">Consulta sin conexión</h3><p data-i18n="benefit.offlineText">Accede a parcelas, sensores y mediciones descargadas, sabiendo cuándo se actualizaron.</p></li>
+          <li><h3 data-i18n="benefit.weatherTitle">Pronóstico del clima</h3><p data-i18n="benefit.weatherText">Consulta el pronóstico de tu parcela junto a sus mediciones y mira cuándo se recomienda suspender el riego.</p></li>
+          <li><h3 data-i18n="benefit.satelliteTitle">Vista satelital</h3><p data-i18n="benefit.satelliteText">Mira la imagen satelital de tu parcela con su índice de vigor (NDVI) y compara la vegetación entre dos fechas.</p></li>
+          <li><h3 data-i18n="benefit.offlineTitle">Consulta sin conexión</h3><p data-i18n="benefit.offlineText">Consulta las parcelas, sensores y mediciones que ya descargaste, sabiendo cuándo se actualizaron.</p></li>
       </ul>
     </div>
   </section>
@@ -112,7 +115,7 @@
         <h2 id="how-title" data-i18n="how.title">De la parcela a tu teléfono en tres pasos</h2>
         <p class="section-description" data-i18n="how.description">TerraTech conecta la información de tus sensores con una app Android.</p>
         <ol class="steps">
-          <li><h3 data-i18n="how.step1Title">Asocia el sensor a tu parcela</h3><p data-i18n="how.step1Text">Registra tu parcela en la app y vincula un dispositivo válido para consultar sus mediciones.</p></li>
+          <li><h3 data-i18n="how.step1Title">Asocia el sensor a tu parcela</h3><p data-i18n="how.step1Text">Registra tu parcela en la app y vincula el sensor con su código para consultar sus mediciones.</p></li>
           <li><h3 data-i18n="how.step2Title">Elige la parcela que quieres revisar</h3><p data-i18n="how.step2Text">Selecciona una parcela y mira sus dispositivos asociados y las últimas mediciones, con su fecha de actualización.</p></li>
           <li><h3 data-i18n="how.step3Title">Consulta el histórico, también sin conexión</h3><p data-i18n="how.step3Text">Revisa cómo cambió la humedad en los últimos 7 o 30 días. Lo que ya descargaste sigue disponible cuando no hay señal.</p></li>
         </ol>
@@ -124,10 +127,10 @@
           <button type="button" role="tab" id="tab-offline" aria-controls="product-panel" aria-selected="false" tabindex="-1" data-screen="offline" data-i18n="gallery.offline">Sin conexión</button>
         </div>
         <div class="gallery-panel" id="product-panel" role="tabpanel" aria-labelledby="tab-dashboard" tabindex="0">
-          <div class="phone-frame"><img id="gallery-screen" src="public/images/screens/dashboard.png" alt="Captura original en español del dashboard de TerraTech con indicadores de humedad, temperatura y nutrientes" data-i18n-alt="screen.dashboardAlt" width="390" height="844" loading="lazy"></div>
+          <div class="phone-frame"><img id="gallery-screen" src="public/images/screens/dashboard.png" alt="Vista ilustrativa del panel de TerraTech con indicadores de humedad, temperatura y nutrientes" data-i18n-alt="screen.dashboardAlt" width="390" height="844" loading="lazy"></div>
           <p data-i18n="gallery.dashboardText" class="gallery-description" id="gallery-description">Consulta los indicadores de tu parcela y la fecha de actualización de las mediciones.</p>
         </div>
-        <p data-i18n="gallery.original" class="gallery-source">Capturas originales de la app en español.</p>
+        <p data-i18n="gallery.original" class="gallery-source">Vistas ilustrativas de la app.</p>
       </div>
     </div>
   </section>
@@ -143,11 +146,13 @@
           <h3 data-i18n="plans.pro">Pro</h3>
           <p data-i18n="plans.proDescription" class="plan-description">Para gestionar tus parcelas y consultar la información del suelo.</p>
           <p class="plan-price"><span class="price-currency">S/</span><strong>50</strong><span data-i18n="plans.period">al mes</span></p>
+          <p class="price-note" data-i18n="plans.priceNote">Precio referencial.</p>
           <ul class="plan-features">
             <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span data-i18n="plans.proPlots">Gestión de parcelas y sensores</span></li>
             <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span data-i18n="plans.proIndicators">Humedad, temperatura y nutrientes</span></li>
             <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span data-i18n="plans.proHistory">Histórico de humedad de 7 y 30 días</span></li>
             <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span data-i18n="plans.proOffline">Consulta de información descargada</span></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span data-i18n="plans.proExtras">Pronóstico del clima y vista satelital</span></li>
           </ul>
           <a class="button button-accent" href="#contacto" data-i18n="cta.demo">Solicitar demostración</a>
         </article>
@@ -182,10 +187,10 @@
     <div class="container faq-layout">
       <h2 id="faq-title" data-i18n="faq.title">Preguntas frecuentes</h2>
       <div class="faq-list">
-          <details><summary><span data-i18n="faq.q1">¿Necesito internet para usar la app?</span></summary><p data-i18n="faq.a1">Para actualizar las mediciones, sí. Sin conexión puedes consultar las parcelas, sensores y mediciones que ya descargaste, y la app te indica cuándo se actualizaron.</p></details>
+          <details><summary><span data-i18n="faq.q1">¿Necesito internet para usar la app?</span></summary><p data-i18n="faq.a1">Para actualizar las mediciones y para registrar o editar datos, sí. Sin conexión puedes consultar las parcelas, sensores y mediciones que ya descargaste, y la app te indica cuándo se actualizaron.</p></details>
           <details><summary><span data-i18n="faq.q2">¿Qué mide el sensor?</span></summary><p data-i18n="faq.a2">La humedad del suelo en porcentaje, la temperatura en grados Celsius y los niveles de nitrógeno, fósforo y potasio en ppm.</p></details>
           <details><summary><span data-i18n="faq.q3">¿En qué dispositivos funciona?</span></summary><p data-i18n="faq.a3">TerraTech funciona como una app para teléfonos Android.</p></details>
-          <details><summary><span data-i18n="faq.q4">¿Cuánto cuesta?</span></summary><p data-i18n="faq.a4">El plan Pro cuesta S/ 50 al mes. Para organizaciones, conversamos las opciones del plan Empresarial. Los precios son informativos: esta página no procesa pagos.</p></details>
+          <details><summary><span data-i18n="faq.q4">¿Cuánto cuesta?</span></summary><p data-i18n="faq.a4">El plan Pro tiene un precio referencial de S/ 50 al mes. Para organizaciones, conversamos las opciones del plan Empresarial. Esta página no procesa pagos.</p></details>
           <details><summary><span data-i18n="faq.q5">¿TerraTech reemplaza a un agrónomo?</span></summary><p data-i18n="faq.a5">No. La información sirve de apoyo para tus decisiones y no sustituye la evaluación de un profesional agrónomo.</p></details>
           <details><summary><span data-i18n="faq.q6">¿El formulario envía mis datos?</span></summary><p data-i18n="faq.a6">No. Es un formulario de prueba: lo que escribes no se envía ni se guarda.</p></details>
       </div>

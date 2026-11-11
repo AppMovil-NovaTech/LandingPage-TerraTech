@@ -176,6 +176,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .plan-price strong, .price-currency { font-family: var(--font-display); font-weight: 700; color: var(--color-maize); }
 .plan-price strong { font-size: clamp(72px, 8vw, 104px); line-height: .9; font-stretch: 80%; letter-spacing: -.02em; }
 .price-currency { font-size: 32px; }
+.price-note { margin-top: 8px; font-size: 14px; color: rgba(230, 239, 230, .78); }
 .plan-features { display: grid; gap: 12px; margin-block: 28px 36px; }
 .plan-features li { display: flex; align-items: flex-start; gap: 12px; }
 .plan-features .icon { margin-top: 2px; color: var(--color-maize); }
