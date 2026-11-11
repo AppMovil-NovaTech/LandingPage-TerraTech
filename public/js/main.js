@@ -1,33 +1,16 @@
 "use strict";
 
-// Prevent native submission during loading and after a translation load failure.
-document.querySelector("#demo-form").addEventListener("submit", event => event.preventDefault());
-
-(async () => {
-if (!await i18n.ready) return;
-
-const state = { screen: "dashboard", loading: false, status: null, errors: new Map() };
-const form = document.querySelector("#demo-form");
-const submitButton = form.querySelector('[type="submit"]');
-const submitLabel = document.querySelector("#submit-label");
-const formStatus = document.querySelector("#form-status");
+(() => {
 const menuButton = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
-const screenImage = document.querySelector("#gallery-screen");
-const screenDescription = document.querySelector("#gallery-description");
-const screenButtons = [...document.querySelectorAll("[data-screen]")];
-const fields = {
-  name: { input: document.querySelector("#full-name"), error: document.querySelector("#name-error") },
-  email: { input: document.querySelector("#email"), error: document.querySelector("#email-error") },
-  area: { input: document.querySelector("#land-area"), error: document.querySelector("#area-error") }
-};
 
-const translate = i18n.t;
+const translate = typeof i18n !== "undefined" ? i18n.t : () => undefined;
 
 function updateMenuLabel() {
-  const key = menuButton.getAttribute("aria-expanded") === "true" ? "nav.menuClose" : "nav.menuOpen";
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  const key = isOpen ? "nav.menuClose" : "nav.menuOpen";
   menuButton.setAttribute("data-i18n-aria-label", key);
-  menuButton.setAttribute("aria-label", translate(key));
+  menuButton.setAttribute("aria-label", translate(key) ?? (isOpen ? "Cerrar menú" : "Abrir menú"));
 }
 
 function setMenu(open, returnFocus = false) {
@@ -45,7 +28,7 @@ mainNav.querySelectorAll("a").forEach(link => {
     const wasOpen = menuButton.getAttribute("aria-expanded") === "true";
     setMenu(false);
     if (wasOpen) {
-      const target = document.querySelector(link.getAttribute("href"));
+      const target = link.hash ? document.querySelector(link.hash) : null;
       if (target) {
         target.setAttribute("tabindex", "-1");
         target.focus({ preventScroll: true });
@@ -59,116 +42,17 @@ document.addEventListener("keydown", event => {
 document.addEventListener("click", event => {
   if (!event.target.closest(".site-header")) setMenu(false);
 });
-window.matchMedia("(min-width: 1280px)").addEventListener("change", event => {
+window.matchMedia("(min-width: 1080px)").addEventListener("change", event => {
   if (event.matches) setMenu(false);
-});
-function selectScreen(name, moveFocus = false) {
-  if (!["dashboard", "history", "offline"].includes(name)) return;
-  state.screen = name;
-  screenImage.src = "public/images/screens/" + name + ".png";
-  screenImage.dataset.i18nAlt = "screen." + name + "Alt";
-  screenImage.alt = translate(screenImage.dataset.i18nAlt);
-  screenDescription.dataset.i18n = "gallery." + name + "Text";
-  screenDescription.textContent = translate(screenDescription.dataset.i18n);
-  document.querySelector("#product-panel").setAttribute("aria-labelledby", "tab-" + name);
-  screenButtons.forEach(button => {
-    const selected = button.dataset.screen === name;
-    button.setAttribute("aria-selected", String(selected));
-    button.tabIndex = selected ? 0 : -1;
-    if (selected && moveFocus) button.focus();
-  });
-}
-screenButtons.forEach((button, index) => {
-  button.addEventListener("click", () => selectScreen(button.dataset.screen));
-  button.addEventListener("keydown", event => {
-    let targetIndex;
-    if (event.key === "ArrowRight") targetIndex = (index + 1) % screenButtons.length;
-    else if (event.key === "ArrowLeft") targetIndex = (index - 1 + screenButtons.length) % screenButtons.length;
-    else if (event.key === "Home") targetIndex = 0;
-    else if (event.key === "End") targetIndex = screenButtons.length - 1;
-    else return;
-    event.preventDefault();
-    selectScreen(screenButtons[targetIndex].dataset.screen, true);
-  });
-});
-
-function validateField(field) {
-  const input = fields[field].input;
-  if (field === "name" && !input.value.trim()) return "form.nameError";
-  if (field === "email") {
-    if (!input.value.trim()) return "form.emailRequired";
-    if (input.validity.typeMismatch) return "form.emailInvalid";
-  }
-  if (field === "area" && (input.validity.badInput ||
-      (input.value !== "" && (!Number.isFinite(Number(input.value)) || Number(input.value) <= 0)))) {
-    return "form.areaError";
-  }
-  return null;
-}
-
-function setFieldError(field, key) {
-  const { input, error } = fields[field];
-  if (key) {
-    state.errors.set(field, key);
-    input.setAttribute("aria-invalid", "true");
-    error.textContent = translate(key);
-    error.hidden = false;
-  } else {
-    state.errors.delete(field);
-    input.removeAttribute("aria-invalid");
-    error.textContent = "";
-    error.hidden = true;
-  }
-}
-
-function renderFormStatus() {
-  submitLabel.dataset.i18n = state.loading ? "form.loading" : "cta.demo";
-  submitLabel.textContent = translate(submitLabel.dataset.i18n);
-  submitButton.disabled = state.loading;
-  form.setAttribute("aria-busy", String(state.loading));
-  form.querySelector(".spinner").hidden = !state.loading;
-  formStatus.hidden = !state.status;
-  formStatus.classList.toggle("is-error", state.status === "form.errorSummary");
-  formStatus.textContent = state.status ? translate(state.status) : "";
-}
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  if (state.loading) return;
-  Object.keys(fields).forEach(field => setFieldError(field, validateField(field)));
-  if (state.errors.size) {
-    state.status = "form.errorSummary";
-    renderFormStatus();
-    fields[state.errors.keys().next().value].input.focus();
-    return;
-  }
-  state.status = null;
-  state.loading = true;
-  renderFormStatus();
-  // Intentional local simulation. No request, mailto, analytics or personal-data storage.
-  window.setTimeout(() => {
-    state.loading = false;
-    state.status = "form.success";
-    renderFormStatus();
-  }, 2000);
-});
-
-Object.entries(fields).forEach(([field, { input }]) => {
-  input.addEventListener("input", () => {
-    if (state.errors.has(field)) setFieldError(field, validateField(field));
-    if (!state.loading && (state.status === "form.success" || !state.errors.size)) {
-      state.status = null;
-      renderFormStatus();
-    }
-  });
 });
 
 const navLinks = [...mainNav.querySelectorAll("[data-nav-link]")];
 let scrollScheduled = false;
 function updateActiveLink() {
-  let active = navLinks[0];
+  let active = null;
   for (const link of navLinks) {
-    if (document.querySelector(link.hash).getBoundingClientRect().top <= window.innerHeight * .3) active = link;
+    const target = link.hash ? document.querySelector(link.hash) : null;
+    if (target && target.getBoundingClientRect().top <= window.innerHeight * .3) active = link;
   }
   navLinks.forEach(link => {
     if (link === active) link.setAttribute("aria-current", "location");
@@ -181,13 +65,8 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 window.addEventListener("resize", updateActiveLink);
 
-document.addEventListener("terratech:languagechange", () => {
-  state.errors.forEach((key, field) => { fields[field].error.textContent = translate(key); });
-  updateMenuLabel();
-  renderFormStatus();
-});
+document.addEventListener("terratech:languagechange", updateMenuLabel);
 updateMenuLabel();
-renderFormStatus();
 updateActiveLink();
 
 const termsDialog = document.querySelector("#terms-modal");
@@ -228,4 +107,104 @@ termsDialog.addEventListener("keydown", event => {
     event.preventDefault(); first.focus();
   }
 });
+
+function extractYouTubeId(rawSrc) {
+  if (!rawSrc) return "";
+  try {
+    const url = new URL(rawSrc);
+    if (url.hostname.includes("youtu.be")) return url.pathname.slice(1).split("/")[0];
+    if (url.pathname.includes("/embed/")) return url.pathname.split("/embed/")[1].split("/")[0];
+    return url.searchParams.get("v") || "";
+  } catch {
+    return /^[\w-]{11}$/.test(rawSrc.trim()) ? rawSrc.trim() : "";
+  }
+}
+
+document.querySelectorAll("[data-video-facade]").forEach(facade => {
+  const trigger = facade.querySelector(".video-trigger");
+  const videoId = extractYouTubeId(facade.dataset.videoSrc);
+  const externalLink = facade.closest(".product")?.querySelector("[data-video-external]");
+  if (!trigger || !videoId) return;
+  const encodedId = encodeURIComponent(videoId);
+  if (externalLink) externalLink.href = `https://www.youtube.com/watch?v=${encodedId}`;
+  trigger.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube.com/embed/${encodedId}?autoplay=1&rel=0`;
+    iframe.title = trigger.getAttribute("aria-label") || "Video de presentación de TerraTech";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+    facade.replaceChildren(iframe);
+  });
+});
+
+document.querySelectorAll("[data-screen-tabs]").forEach(tablist => {
+  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
+  if (!tabs.length || tabs.some((_, index) => !panels[index])) return;
+
+  let activeIndex = Math.max(0, tabs.findIndex(tab => tab.getAttribute("aria-selected") === "true"));
+
+  function warmPanel(index) {
+    const img = panels[index]?.querySelector("img");
+    if (img && img.loading === "lazy") img.loading = "eager";
+  }
+
+  function activateTab(nextIndex, shouldFocus = false) {
+    if (nextIndex === activeIndex) {
+      if (shouldFocus) tabs[nextIndex].focus();
+      return;
+    }
+    const direction = nextIndex > activeIndex ? "next" : "prev";
+    activeIndex = nextIndex;
+    warmPanel(nextIndex);
+    tabs.forEach((tab, index) => {
+      const selected = index === nextIndex;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      panels[index].removeAttribute("data-slide");
+      panels[index].hidden = !selected;
+    });
+    panels[nextIndex].dataset.slide = direction;
+    if (shouldFocus) tabs[nextIndex].focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("pointerenter", () => warmPanel(index), { once: true });
+    tab.addEventListener("focus", () => warmPanel(index), { once: true });
+    tab.addEventListener("click", () => activateTab(index));
+    tab.addEventListener("keydown", event => {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        activateTab((index + 1) % tabs.length, true);
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        activateTab((index - 1 + tabs.length) % tabs.length, true);
+      } else if (event.key === "Home") {
+        event.preventDefault();
+        activateTab(0, true);
+      } else if (event.key === "End") {
+        event.preventDefault();
+        activateTab(tabs.length - 1, true);
+      }
+    });
+  });
+});
+
+const stepsList = document.querySelector(".steps");
+if (stepsList) {
+  if (!("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      stepsList.getBoundingClientRect().top <= window.innerHeight * .88) {
+    stepsList.classList.add("is-visible");
+  } else {
+    const stepsObserver = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        stepsList.classList.add("is-visible");
+        stepsObserver.disconnect();
+      }
+    }, { threshold: .2 });
+    stepsObserver.observe(stepsList);
+  }
+}
 })();
