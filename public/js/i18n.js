@@ -4,7 +4,7 @@
 const i18n = (() => {
   let language = "es";
   let dictionaries = null;
-  const controls = [...document.querySelectorAll("[data-lang], .menu-toggle, [data-open-terms]")];
+  const controls = [...document.querySelectorAll("[data-lang]")];
   controls.forEach(button => { button.disabled = true; });
 
   function t(key) { return dictionaries?.[language]?.[key]; }
@@ -26,7 +26,8 @@ const i18n = (() => {
   for (const attribute of ["aria-label", "alt"]) {
     document.querySelectorAll("[data-i18n-" + attribute + "]").forEach(element => {
       const key = element.getAttribute("data-i18n-" + attribute);
-      element.setAttribute(attribute, t(key));
+      const value = t(key);
+      if (value !== undefined) element.setAttribute(attribute, value);
     });
   }
   document.querySelectorAll("[data-lang]").forEach(button => {
@@ -42,7 +43,7 @@ const i18n = (() => {
   const ready = (async () => {
     try {
       const entries = await Promise.all(["es", "en"].map(async lang => {
-        const response = await fetch("public/i18n/" + lang + ".json");
+        const response = await fetch("public/i18n/" + lang + ".json?v=2");
         if (!response.ok) throw new Error("Unable to load " + lang + " translations");
         const data = await response.json();
         if (!data || typeof data !== "object" || Array.isArray(data) ||
