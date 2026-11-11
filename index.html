@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0f3523">
   <title>TerraTech | Monitorea tu parcela con datos del suelo</title>
-  <meta name="description" content="Gestiona parcelas y sensores, consulta indicadores del suelo y revisa el histórico de humedad con TerraTech. Plan Pro por S/ 50 al mes.">
+  <meta name="description" content="Consulta la humedad, la temperatura y los nutrientes del suelo de tus parcelas, su histórico y el pronóstico del clima con TerraTech.">
   <meta property="og:title" content="TerraTech | Monitorea tu parcela con datos del suelo">
-  <meta property="og:description" content="Gestiona parcelas y sensores, consulta indicadores del suelo y revisa el histórico de humedad con TerraTech. Plan Pro por S/ 50 al mes.">
+  <meta property="og:description" content="Consulta la humedad, la temperatura y los nutrientes del suelo de tus parcelas, su histórico y el pronóstico del clima con TerraTech.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_PE">
   <meta property="og:url" content="https://appmovil-novatech.github.io/LandingPage-TerraTech/">
@@ -39,14 +39,14 @@
       <a href="#planes" data-nav-link data-i18n="nav.plans">Planes</a>
       <a href="#equipo" data-nav-link data-i18n="nav.team">Equipo</a>
       <a href="#preguntas" data-nav-link data-i18n="nav.faq">Preguntas</a>
-      <a class="button button-primary mobile-nav-cta" href="#contacto" data-i18n="cta.demo">Solicitar demostración</a>
+      <a class="button button-primary mobile-nav-cta" href="#planes" data-i18n="cta.plans">Ver planes</a>
     </nav>
     <div class="header-actions">
       <div class="language-switch" role="group" aria-label="Seleccionar idioma" data-i18n-aria-label="lang.label">
         <button type="button" data-lang="es" aria-pressed="true" aria-label="Español" data-i18n-aria-label="lang.es">ES</button>
         <button type="button" data-lang="en" aria-pressed="false" aria-label="Inglés" data-i18n-aria-label="lang.en">EN</button>
       </div>
-      <a class="button button-primary header-cta" href="#contacto" data-i18n="cta.demo">Solicitar demostración</a>
+      <a class="button button-primary header-cta" href="#planes" data-i18n="cta.plans">Ver planes</a>
       <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú" data-i18n-aria-label="nav.menuOpen"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-menu"></use></svg></button>
     </div>
   </div>
@@ -57,9 +57,9 @@
       <figure class="hero-field">
         <img src="public/images/parcels-1600.webp" srcset="public/images/parcels-800.webp 800w, public/images/parcels-1600.webp 1600w" sizes="100vw" alt="Vista aérea de parcelas de cultivo verdes, amarillas y de tierra recién trabajada, separadas por un camino" data-i18n-alt="hero.photoAlt" width="1600" height="1211" fetchpriority="high">
         <ul class="readings" aria-label="Lecturas de ejemplo de una parcela" data-i18n-aria-label="hero.readingsLabel">
-          <li class="reading reading-moisture"><span class="reading-label" data-i18n="soil.moisture">Humedad</span><strong>42 %</strong></li>
-          <li class="reading reading-temperature"><span class="reading-label" data-i18n="soil.temperature">Temperatura</span><strong>22.4 °C</strong></li>
-          <li class="reading reading-nitrogen"><span class="reading-label" data-i18n="reading.nitrogen">Nitrógeno</span><strong>38 ppm</strong></li>
+          <li class="reading reading-moisture"><span class="reading-label" data-i18n="soil.moisture">Humedad</span><strong>52 %</strong></li>
+          <li class="reading reading-temperature"><span class="reading-label" data-i18n="soil.temperature">Temperatura</span><strong>24.3 °C</strong></li>
+          <li class="reading reading-nitrogen"><span class="reading-label" data-i18n="reading.nitrogen">Nitrógeno</span><strong>35 ppm</strong></li>
         </ul>
         <figcaption class="readings-note" data-i18n="hero.readingsNote">Lecturas de ejemplo.</figcaption>
       </figure>
@@ -67,8 +67,8 @@
         <h1 data-i18n="hero.title" id="hero-title">Monitorea tu parcela con datos del suelo.</h1>
         <p data-i18n="hero.description" class="hero-description">Gestiona tus parcelas y sensores, consulta humedad, temperatura y nutrientes, y revisa el histórico de humedad desde la app Android.</p>
         <div class="hero-actions">
-          <a class="button button-accent" href="#contacto" data-i18n="cta.demo">Solicitar demostración</a>
-          <a class="button button-ghost" href="#como-funciona" data-i18n="cta.how">Ver cómo funciona</a>
+          <a class="button button-accent" href="#funciones" data-i18n="cta.features">Ver funciones</a>
+          <a class="button button-ghost" href="#planes" data-i18n="cta.plans">Ver planes</a>
         </div>
       </div>
     </div>
@@ -89,57 +89,50 @@
   </section>
 
   <section class="section features" id="funciones" aria-labelledby="features-title">
-    <div class="container features-layout">
+    <div class="container">
       <div class="section-intro">
-        <h2 id="features-title" data-i18n="features.title">Lo que puedes hacer desde la app</h2>
-        <p data-i18n="features.description">Todo lo que necesitas para gestionar tus parcelas y consultar la información del suelo desde una experiencia sencilla.</p>
+        <h2 id="features-title" data-i18n="features.title">Tu parcela en la pantalla</h2>
+        <p data-i18n="features.description">Elige una función para ver cómo se muestra en la app.</p>
       </div>
-      <ul class="feature-list">
-          <li><h3 data-i18n="benefit.accessTitle">Registro e inicio de sesión</h3><p data-i18n="benefit.accessText">Crea tu cuenta y accede a la información de tus propias parcelas.</p></li>
-          <li><h3 data-i18n="benefit.profileTitle">Perfil y parcelas</h3><p data-i18n="benefit.profileText">Consulta y actualiza tus datos personales y la información de tu terreno.</p></li>
-          <li><h3 data-i18n="benefit.mapTitle">Contorno de la parcela en el mapa</h3><p data-i18n="benefit.mapText">Ubica tu parcela en el mapa y dibuja su contorno; la app calcula su superficie estimada en hectáreas.</p></li>
-          <li><h3 data-i18n="benefit.sensorTitle">Registro de sensor</h3><p data-i18n="benefit.sensorText">Asocia un dispositivo válido a tu parcela para consultar sus mediciones.</p></li>
-          <li><h3 data-i18n="benefit.plotTitle">Selección de parcela</h3><p data-i18n="benefit.plotText">Elige la parcela que quieres consultar y revisa sus dispositivos asociados.</p></li>
-          <li><h3 data-i18n="benefit.indicatorsTitle">Indicadores del suelo</h3><p data-i18n="benefit.indicatorsText">Consulta las últimas mediciones de humedad, temperatura y nutrientes, con su fecha y un aviso cuando la lectura tiene más de 30 minutos.</p></li>
-          <li><h3 data-i18n="benefit.historyTitle">Historial de mediciones</h3><p data-i18n="benefit.historyText">Revisa la humedad de los últimos 7 o 30 días y el detalle de cada lectura.</p></li>
-          <li><h3 data-i18n="benefit.weatherTitle">Pronóstico del clima</h3><p data-i18n="benefit.weatherText">Consulta el pronóstico de tu parcela junto a sus mediciones y mira cuándo se recomienda suspender el riego.</p></li>
-          <li><h3 data-i18n="benefit.satelliteTitle">Vista satelital</h3><p data-i18n="benefit.satelliteText">Mira la imagen satelital de tu parcela con su índice de vigor (NDVI) y compara la vegetación entre dos fechas.</p></li>
-          <li><h3 data-i18n="benefit.offlineTitle">Consulta sin conexión</h3><p data-i18n="benefit.offlineText">Consulta las parcelas, sensores y mediciones que ya descargaste, sabiendo cuándo se actualizaron.</p></li>
+      <div class="showcase">
+        <div class="showcase-tabs" role="tablist" aria-label="Funciones de la aplicación" data-i18n-aria-label="gallery.label">
+          <button type="button" role="tab" id="tab-indicators" aria-controls="product-panel" aria-selected="true" tabindex="0" data-screen="indicators"><span class="tab-title" data-i18n="benefit.indicatorsTitle">Indicadores del suelo</span><span class="tab-short" data-i18n="gallery.indicators">Indicadores</span><span class="tab-text" data-i18n="benefit.indicatorsText">Consulta las últimas mediciones de humedad, temperatura y nutrientes, con su fecha y un aviso cuando la lectura tiene más de 30 minutos.</span></button>
+          <button type="button" role="tab" id="tab-history" aria-controls="product-panel" aria-selected="false" tabindex="-1" data-screen="history"><span class="tab-title" data-i18n="benefit.historyTitle">Historial de mediciones</span><span class="tab-short" data-i18n="gallery.history">Histórico</span><span class="tab-text" data-i18n="benefit.historyText">Revisa la humedad de los últimos 7 o 30 días y el detalle de cada lectura.</span></button>
+          <button type="button" role="tab" id="tab-map" aria-controls="product-panel" aria-selected="false" tabindex="-1" data-screen="map"><span class="tab-title" data-i18n="benefit.mapTitle">Contorno de la parcela en el mapa</span><span class="tab-short" data-i18n="gallery.map">Mapa</span><span class="tab-text" data-i18n="benefit.mapText">Ubica tu parcela en el mapa y dibuja su contorno; la app calcula su superficie estimada en hectáreas.</span></button>
+          <button type="button" role="tab" id="tab-offline" aria-controls="product-panel" aria-selected="false" tabindex="-1" data-screen="offline"><span class="tab-title" data-i18n="benefit.offlineTitle">Consulta sin conexión</span><span class="tab-short" data-i18n="gallery.offline">Sin conexión</span><span class="tab-text" data-i18n="benefit.offlineText">Consulta las parcelas, sensores y mediciones que ya descargaste, sabiendo cuándo se actualizaron.</span></button>
+        </div>
+        <div class="showcase-screen" id="product-panel" role="tabpanel" aria-labelledby="tab-indicators" tabindex="0">
+          <div class="phone-frame"><img id="gallery-screen" src="public/images/screens/indicators.webp" alt="Captura de la app con la temperatura del suelo, nitrógeno, fósforo y potasio de una parcela y el gráfico de humedad" data-i18n-alt="screen.indicatorsAlt" width="540" height="860" loading="lazy"></div>
+          <p class="showcase-caption" id="gallery-description" data-i18n="benefit.indicatorsText">Consulta las últimas mediciones de humedad, temperatura y nutrientes, con su fecha y un aviso cuando la lectura tiene más de 30 minutos.</p>
+          <p class="gallery-source" data-i18n="gallery.original">Capturas de la app Android, con la interfaz en inglés.</p>
+        </div>
+      </div>
+      <ul class="feature-extras">
+        <li><h3 data-i18n="benefit.weatherTitle">Pronóstico del clima</h3><p data-i18n="benefit.weatherText">Consulta el pronóstico de tu parcela junto a sus mediciones y mira cuándo se recomienda suspender el riego.</p></li>
+        <li><h3 data-i18n="benefit.satelliteTitle">Vista satelital</h3><p data-i18n="benefit.satelliteText">Mira la imagen satelital de tu parcela con su índice de vigor (NDVI) y compara la vegetación entre dos fechas.</p></li>
       </ul>
     </div>
   </section>
 
   <section class="section how" id="como-funciona" aria-labelledby="how-title">
-    <div class="container how-layout">
-      <div class="how-copy">
-        <h2 id="how-title" data-i18n="how.title">De la parcela a tu teléfono en tres pasos</h2>
-        <p class="section-description" data-i18n="how.description">TerraTech conecta la información de tus sensores con una app Android.</p>
-        <ol class="steps">
-          <li><h3 data-i18n="how.step1Title">Asocia el sensor a tu parcela</h3><p data-i18n="how.step1Text">Registra tu parcela en la app y vincula el sensor con su código para consultar sus mediciones.</p></li>
-          <li><h3 data-i18n="how.step2Title">Elige la parcela que quieres revisar</h3><p data-i18n="how.step2Text">Selecciona una parcela y mira sus dispositivos asociados y las últimas mediciones, con su fecha de actualización.</p></li>
-          <li><h3 data-i18n="how.step3Title">Consulta el histórico, también sin conexión</h3><p data-i18n="how.step3Text">Revisa cómo cambió la humedad en los últimos 7 o 30 días. Lo que ya descargaste sigue disponible cuando no hay señal.</p></li>
-        </ol>
+    <div class="container">
+      <div class="section-intro">
+        <h2 id="how-title" data-i18n="how.title">Empieza en tres pasos</h2>
+        <p data-i18n="how.description">TerraTech conecta la información de tus sensores con una app Android.</p>
       </div>
-      <div class="product-gallery">
-        <div class="gallery-tabs" role="tablist" aria-label="Explorar pantallas de la aplicación" data-i18n-aria-label="gallery.label">
-          <button type="button" role="tab" id="tab-dashboard" aria-controls="product-panel" aria-selected="true" tabindex="0" data-screen="dashboard" data-i18n="gallery.dashboard">Indicadores</button>
-          <button type="button" role="tab" id="tab-history" aria-controls="product-panel" aria-selected="false" tabindex="-1" data-screen="history" data-i18n="gallery.history">Histórico</button>
-          <button type="button" role="tab" id="tab-offline" aria-controls="product-panel" aria-selected="false" tabindex="-1" data-screen="offline" data-i18n="gallery.offline">Sin conexión</button>
-        </div>
-        <div class="gallery-panel" id="product-panel" role="tabpanel" aria-labelledby="tab-dashboard" tabindex="0">
-          <div class="phone-frame"><img id="gallery-screen" src="public/images/screens/dashboard.png" alt="Vista ilustrativa del panel de TerraTech con indicadores de humedad, temperatura y nutrientes" data-i18n-alt="screen.dashboardAlt" width="390" height="844" loading="lazy"></div>
-          <p data-i18n="gallery.dashboardText" class="gallery-description" id="gallery-description">Consulta los indicadores de tu parcela y la fecha de actualización de las mediciones.</p>
-        </div>
-        <p data-i18n="gallery.original" class="gallery-source">Vistas ilustrativas de la app.</p>
-      </div>
+      <ol class="steps">
+        <li><h3 data-i18n="how.step1Title">Crea tu cuenta y tu parcela</h3><p data-i18n="how.step1Text">Regístrate, completa los datos de tu terreno y ubica tu parcela en el mapa.</p></li>
+        <li><h3 data-i18n="how.step2Title">Asocia tu sensor</h3><p data-i18n="how.step2Text">Vincula el sensor a la parcela con su código para empezar a ver sus mediciones.</p></li>
+        <li><h3 data-i18n="how.step3Title">Consulta tu suelo</h3><p data-i18n="how.step3Text">Revisa los indicadores, el histórico y el clima de cada parcela, también sin conexión.</p></li>
+      </ol>
     </div>
   </section>
 
   <section class="section plans" id="planes" aria-labelledby="plans-title">
     <div class="container">
       <div class="section-intro">
-        <h2 data-i18n="plans.title" id="plans-title">Elige cómo empezar con TerraTech</h2>
-        <p data-i18n="plans.description">Conoce el plan Pro o conversemos sobre las necesidades de tu organización.</p>
+        <h2 data-i18n="plans.title" id="plans-title">Planes</h2>
+        <p data-i18n="plans.description">Un plan para tus parcelas y otro a la medida de tu organización.</p>
       </div>
       <div class="plans-grid">
         <article class="plan-card plan-pro">
@@ -154,14 +147,11 @@
             <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span data-i18n="plans.proOffline">Consulta de información descargada</span></li>
             <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span data-i18n="plans.proExtras">Pronóstico del clima y vista satelital</span></li>
           </ul>
-          <a class="button button-accent" href="#contacto" data-i18n="cta.demo">Solicitar demostración</a>
         </article>
         <article class="plan-card plan-enterprise">
           <h3 data-i18n="plans.enterprise">Empresarial</h3>
-          <p data-i18n="plans.enterpriseDescription" class="plan-description">Cuéntanos sobre tu organización y las necesidades de tus parcelas.</p>
-          <p data-i18n="plans.enterprisePrice" class="enterprise-price">Conversemos</p>
-          <p data-i18n="plans.enterpriseDetail" class="enterprise-detail">Contacta con nuestro equipo para conversar sobre las opciones de contratación.</p>
-          <a class="button button-secondary" href="#contacto" data-i18n="cta.contact">Contactar con nosotros</a>
+          <p data-i18n="plans.enterpriseDescription" class="plan-description">Para organizaciones con varias parcelas.</p>
+          <p data-i18n="plans.enterprisePrice" class="enterprise-price">A medida</p>
         </article>
       </div>
     </div>
@@ -190,50 +180,12 @@
           <details><summary><span data-i18n="faq.q1">¿Necesito internet para usar la app?</span></summary><p data-i18n="faq.a1">Para actualizar las mediciones y para registrar o editar datos, sí. Sin conexión puedes consultar las parcelas, sensores y mediciones que ya descargaste, y la app te indica cuándo se actualizaron.</p></details>
           <details><summary><span data-i18n="faq.q2">¿Qué mide el sensor?</span></summary><p data-i18n="faq.a2">La humedad del suelo en porcentaje, la temperatura en grados Celsius y los niveles de nitrógeno, fósforo y potasio en ppm.</p></details>
           <details><summary><span data-i18n="faq.q3">¿En qué dispositivos funciona?</span></summary><p data-i18n="faq.a3">TerraTech funciona como una app para teléfonos Android.</p></details>
-          <details><summary><span data-i18n="faq.q4">¿Cuánto cuesta?</span></summary><p data-i18n="faq.a4">El plan Pro tiene un precio referencial de S/ 50 al mes. Para organizaciones, conversamos las opciones del plan Empresarial. Esta página no procesa pagos.</p></details>
+          <details><summary><span data-i18n="faq.q4">¿Cuánto cuesta?</span></summary><p data-i18n="faq.a4">El plan Pro tiene un precio referencial de S/ 50 al mes. El plan Empresarial se define a la medida de cada organización.</p></details>
           <details><summary><span data-i18n="faq.q5">¿TerraTech reemplaza a un agrónomo?</span></summary><p data-i18n="faq.a5">No. La información sirve de apoyo para tus decisiones y no sustituye la evaluación de un profesional agrónomo.</p></details>
-          <details><summary><span data-i18n="faq.q6">¿El formulario envía mis datos?</span></summary><p data-i18n="faq.a6">No. Es un formulario de prueba: lo que escribes no se envía ni se guarda.</p></details>
       </div>
     </div>
   </section>
 
-  <section class="section contact" id="contacto" aria-labelledby="contact-title">
-    <div class="container contact-layout">
-      <div class="contact-copy">
-        <h2 data-i18n="contact.title" id="contact-title">Solicita una demostración</h2>
-        <p data-i18n="contact.description" class="section-description">Cuéntanos sobre tu parcela y explora cómo TerraTech puede ayudarte a consultar la información de tu suelo.</p>
-      </div>
-      <form class="demo-form" id="demo-form" novalidate>
-        <h3 data-i18n="form.title">Hablemos de tu parcela</h3>
-        <p data-i18n="form.requiredNote" class="form-intro">Nombre y correo son obligatorios.</p>
-        <div class="form-field">
-          <label for="full-name" data-i18n="form.name">Nombre completo</label>
-          <input id="full-name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-          <p class="field-error" id="name-error" hidden></p>
-        </div>
-        <div class="form-field">
-          <label for="email" data-i18n="form.email">Correo electrónico</label>
-          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-          <p class="field-error" id="email-error" hidden></p>
-        </div>
-        <div class="form-field">
-          <label for="phone"><span data-i18n="form.phone">Teléfono</span> <span data-i18n="form.optional" class="optional-label">Opcional</span></label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" aria-describedby="phone-hint">
-          <p data-i18n="form.phoneHint" class="field-hint" id="phone-hint">Puedes incluir tu código de país.</p>
-        </div>
-        <div class="form-field">
-          <label for="land-area"><span data-i18n="form.area">Tamaño del terreno (ha)</span> <span data-i18n="form.optional" class="optional-label">Opcional</span></label>
-          <input id="land-area" name="area" type="number" step="any" inputmode="decimal" aria-describedby="area-hint area-error">
-          <p data-i18n="form.areaHint" class="field-hint" id="area-hint">Ingresa el tamaño en hectáreas.</p>
-          <p class="field-error" id="area-error" hidden></p>
-        </div>
-        <p data-i18n="form.simulation" class="simulation-note">Formulario de prueba. No envía solicitudes ni correos.</p>
-        <button class="button button-primary form-submit" type="submit" disabled><span id="submit-label" data-i18n="cta.demo">Solicitar demostración</span><span class="spinner" hidden aria-hidden="true"></span></button>
-        <div class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true" hidden></div>
-        <noscript><p data-i18n="form.noJs" class="field-hint">Activa JavaScript para probar el formulario. No se enviarán datos.</p></noscript>
-      </form>
-    </div>
-  </section>
 </main>
 <footer class="site-footer">
   <div class="container">
@@ -244,8 +196,7 @@
 <a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
 <a href="#planes" data-i18n="nav.plans">Planes</a>
 <a href="#equipo" data-i18n="nav.team">Equipo</a>
-<a href="#preguntas" data-i18n="nav.faq">Preguntas</a>
-<a href="#contacto" data-i18n="nav.contact">Contacto</a></nav></div>
+<a href="#preguntas" data-i18n="nav.faq">Preguntas</a></nav></div>
       <div class="footer-project"><h3 data-i18n="footer.project">El proyecto</h3><a href="https://github.com/AppMovil-Dato/terratech-project-report" target="_blank" rel="noopener noreferrer" data-i18n="footer.report">Informe del proyecto</a><button class="terms-trigger" type="button" data-open-terms data-i18n="footer.terms" disabled>Términos y condiciones</button><p data-i18n="footer.developed">Desarrollado por NovaTech.</p></div>
     </div>
     <div class="footer-bottom"><p>© 2026 TerraTech.</p><a href="https://unsplash.com/photos/RUj5b4YXaHE" target="_blank" rel="noopener noreferrer" data-i18n="footer.photo">Fotografía aérea: Jean Wimmerlin / Unsplash.</a></div>
@@ -257,17 +208,17 @@
     <button class="button button-secondary" type="button" data-close-terms data-i18n="terms.close" data-i18n-aria-label="terms.close" aria-label="Cerrar">Cerrar</button>
   </div>
   <p id="terms-notice" class="terms-notice" data-i18n="terms.notice">Borrador de condiciones de uso para la versión informativa de TerraTech.</p>
-  <p class="terms-updated" data-i18n="terms.updated">Última actualización: 4 de octubre de 2026</p>
+  <p class="terms-updated" data-i18n="terms.updated">Última actualización: 10 de noviembre de 2026</p>
   <div class="terms-body">
-      <section><h3 data-i18n="terms.body.1.title">Objeto y aceptación de las condiciones</h3><p data-i18n="terms.body.1.text">Estas condiciones describen el uso del sitio web informativo de TerraTech, desarrollado por NovaTech. Al utilizarlo, se espera que respetes las reglas de uso aquí indicadas. Visitar la página o probar el formulario no constituye una contratación ni genera una obligación de pago.</p></section>
-      <section><h3 data-i18n="terms.body.2.title">Descripción del servicio</h3><p data-i18n="terms.body.2.text">TerraTech presenta una solución para gestionar parcelas y sensores, consultar humedad, temperatura y nutrientes del suelo, revisar el histórico de humedad y acceder a información previamente descargada. Las capturas muestran ejemplos de la aplicación. Esta página no conecta sensores ni consulta mediciones reales del visitante.</p></section>
+      <section><h3 data-i18n="terms.body.1.title">Objeto y aceptación de las condiciones</h3><p data-i18n="terms.body.1.text">Estas condiciones describen el uso del sitio web informativo de TerraTech, desarrollado por NovaTech. Al utilizarlo, se espera que respetes las reglas de uso aquí indicadas. Visitar la página no constituye una contratación ni genera una obligación de pago.</p></section>
+      <section><h3 data-i18n="terms.body.2.title">Descripción del servicio</h3><p data-i18n="terms.body.2.text">TerraTech presenta una solución para gestionar parcelas y sensores, consultar humedad, temperatura y nutrientes del suelo, revisar el histórico de humedad, el pronóstico del clima y la vista satelital, y acceder a información previamente descargada. Las capturas muestran ejemplos de la aplicación. Esta página no conecta sensores ni consulta mediciones reales del visitante.</p></section>
       <section><h3 data-i18n="terms.body.3.title">Registro y uso de la cuenta</h3><p data-i18n="terms.body.3.text">La landing no permite crear cuentas ni iniciar sesión. Si utilizas la aplicación TerraTech, debes proporcionar información veraz, mantener tus credenciales protegidas y utilizar únicamente cuentas, parcelas y dispositivos sobre los que tengas autorización. Las condiciones específicas de la aplicación deberán comunicarse antes de su uso.</p></section>
       <section><h3 data-i18n="terms.body.4.title">Uso del contenido y conducta aceptable</h3><p data-i18n="terms.body.4.text">Puedes consultar el contenido para conocer TerraTech y evaluar sus funcionalidades. No debes intentar acceder sin autorización a sistemas o datos de terceros, interferir con el funcionamiento del sitio, introducir contenido malicioso ni utilizar la marca para suplantar al equipo responsable.</p></section>
       <section><h3 data-i18n="terms.body.5.title">Propiedad intelectual</h3><p data-i18n="terms.body.5.text">Los textos, diseños, marcas, fotografías y recursos del sitio pertenecen a sus respectivos titulares o se utilizan conforme a sus licencias. Consultar la página no transfiere derechos sobre estos materiales. Cualquier reutilización debe respetar las licencias aplicables y los créditos de los recursos de terceros.</p></section>
-      <section><h3 data-i18n="terms.body.6.title">Privacidad y tratamiento de datos</h3><p data-i18n="terms.body.6.text">El formulario actual es una simulación: los datos ingresados no se envían a un servidor ni se guardan de forma persistente por la landing; permanecen en los campos mientras la página está abierta. Solo se guarda la preferencia de idioma en el navegador. Los enlaces externos tienen sus propias políticas de privacidad. Antes de habilitar la recepción real de datos, se informarán el responsable, la finalidad del tratamiento y los canales para ejercer los derechos correspondientes.</p></section>
+      <section><h3 data-i18n="terms.body.6.title">Privacidad y tratamiento de datos</h3><p data-i18n="terms.body.6.text">Esta página no solicita ni recopila datos personales. Solo se guarda la preferencia de idioma en el navegador. Los enlaces externos tienen sus propias políticas de privacidad. Antes de habilitar la recepción de datos, se informarán el responsable, la finalidad del tratamiento y los canales para ejercer los derechos correspondientes.</p></section>
       <section><h3 data-i18n="terms.body.7.title">Limitación de responsabilidad</h3><p data-i18n="terms.body.7.text">La información de TerraTech sirve como apoyo y no sustituye la evaluación de un profesional agrónomo ni garantiza resultados de producción. Las mediciones pueden variar según el sensor, su instalación y la fecha de actualización; los datos descargados pueden estar desactualizados. Comprueba su vigencia antes de tomar decisiones. Estas condiciones no limitan los derechos que la normativa aplicable reconozca al usuario.</p></section>
       <section><h3 data-i18n="terms.body.8.title">Cambios a las condiciones</h3><p data-i18n="terms.body.8.text">El contenido del sitio y estas condiciones podrán actualizarse para reflejar cambios en el producto. La fecha de última actualización se mostrará en este documento. Los precios y planes publicados son informativos: esta versión no procesa pagos, activa suscripciones ni confirma contrataciones.</p></section>
-      <section><h3 data-i18n="terms.body.9.title">Contacto</h3><p data-i18n="terms.body.9.text">El formulario de demostración todavía no es un canal de contacto operativo y no genera solicitudes. Puedes consultar el informe del proyecto mediante el enlace del pie de página para conocer al equipo y el contexto de TerraTech. Cuando exista un canal de atención oficial, se publicará en esta página.</p></section>
+      <section><h3 data-i18n="terms.body.9.title">Contacto</h3><p data-i18n="terms.body.9.text">Puedes consultar el informe del proyecto mediante el enlace del pie de página para conocer al equipo y el contexto de TerraTech. Cuando exista un canal de atención oficial, se publicará en esta página.</p></section>
   </div>
 </dialog>
 </body>
