@@ -132,18 +132,6 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .readings-note { position: absolute; z-index: 1; right: 20px; top: 16px; padding: 4px 12px; border-radius: 999px; background: rgba(10, 38, 24, .72); color: var(--color-on-dark); font-size: 13px; }
 @keyframes pin-in { from { opacity: 0; transform: translateY(10px) scale(.94); } }
 
-/* Context: sourced figures, each answered by something the app does. */
-.why { margin-top: 12px; background: var(--color-forest) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='390' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M-20 60 230 150 180 330-20 270ZM250 150 540 40 540 250 205 330ZM60-20 235 130 540 20M190 345 150 410M215 345 540 270'/%3E%3C/svg%3E"); color: var(--color-on-dark); }
-.why h2 { max-width: 16ch; color: #fff; }
-.why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: clamp(32px, 5vw, 56px); }
-.why-grid li { padding-top: 20px; border-top: 1px solid var(--color-line-on-dark); }
-.why-figure { color: var(--color-maize); font: 700 clamp(56px, 6.4vw, 88px)/1 var(--font-display); font-stretch: 80%; letter-spacing: -.02em; white-space: nowrap; }
-.why-fact { margin-top: 12px; max-width: 30ch; }
-.why-answer { margin-top: 12px; max-width: 30ch; color: #fff; font: 600 20px/1.3 var(--font-display); }
-.why-sources { margin-top: 40px; font-size: 14px; color: rgba(230, 239, 230, .75); }
-.why-sources a { color: inherit; text-decoration: underline; }
-.why-sources a:focus-visible { outline-color: var(--color-maize); }
-
 /* Sensors */
 .measures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--color-ink); }
 .measure { padding: 28px 32px 0 0; }
@@ -165,11 +153,10 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .feature-points > div { padding-block: 18px; border-top: 1px solid var(--color-line); }
 .feature-points dt { color: var(--color-ink); font: 600 20px/1.3 var(--font-display); }
 .feature-points dd { margin: 6px 0 0; max-width: 48ch; }
-.feature-visual { position: relative; display: flex; justify-content: center; padding: clamp(28px, 4vw, 48px) 0; border-radius: var(--radius-panel); background: var(--color-forest) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='390' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M-20 60 230 150 180 330-20 270ZM250 150 540 40 540 250 205 330ZM60-20 235 130 540 20M190 345 150 410M215 345 540 270'/%3E%3C/svg%3E"); }
+.feature-visual { position: relative; display: flex; justify-content: center; padding-left: 12%; padding-block: clamp(28px, 4vw, 48px); border-radius: var(--radius-panel); background: var(--color-forest) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='390' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M-20 60 230 150 180 330-20 270ZM250 150 540 40 540 250 205 330ZM60-20 235 130 540 20M190 345 150 410M215 345 540 270'/%3E%3C/svg%3E"); }
 .phone-frame { position: relative; width: min(250px, 58%); aspect-ratio: 540 / 860; border: 6px solid #05140c; border-radius: 30px; background: #05140c; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
 .phone-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.feature-visual-pair { justify-content: center; padding-left: 12%; }
-.feature-visual-pair .phone-back { position: absolute; left: 14%; top: 50%; width: min(210px, 48%); translate: 0 -50%; opacity: .92; }
+.phone-back { position: absolute; left: 14%; top: 50%; width: min(210px, 48%); translate: 0 -50%; opacity: .92; }
 .data-chip { position: absolute; display: flex; flex-direction: column; padding: 9px 14px 10px; border-radius: 14px; background: #fff; box-shadow: 0 12px 30px rgba(0, 0, 0, .3); }
 .data-chip span { color: var(--color-muted); font-size: 13px; line-height: 1.3; }
 .data-chip strong { color: var(--color-ink); font: 700 22px/1.15 var(--font-display); font-stretch: 88%; white-space: nowrap; }
@@ -185,7 +172,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .steps h3 + p { margin-top: 8px; max-width: 34ch; }
 
 /* Plans */
-.plans-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 24px; }
+.plans-grid { display: grid; align-items: start; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 24px; }
 .plan-card { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(24px, 3.4vw, 44px); border-radius: var(--radius-panel); }
 .plan-card h3 { font-size: 30px; font-weight: 700; }
 .plan-description { margin-top: 8px; max-width: 40ch; }
@@ -196,13 +183,12 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .plan-price strong { font-size: clamp(72px, 8vw, 104px); line-height: .9; font-stretch: 80%; letter-spacing: -.02em; }
 .price-currency { font-size: 32px; }
 .price-note { margin-top: 8px; font-size: 14px; color: rgba(230, 239, 230, .78); }
-.plan-features { display: grid; gap: 12px; margin-block: 28px 36px; }
+.plan-features { display: grid; gap: 12px; margin-top: 28px; }
 .plan-features li { display: flex; align-items: flex-start; gap: 12px; }
 .plan-features .icon { margin-top: 2px; color: var(--color-maize); }
 .plan-enterprise { border: 1px solid var(--color-line); background: var(--color-surface); }
-.plan-card > .button { margin-top: auto; }
 .plans { background: var(--color-mist); }
-.enterprise-price { margin-top: 28px; margin-bottom: 36px; font: 700 clamp(40px, 4.4vw, 56px)/1 var(--font-display); font-stretch: 85%; letter-spacing: -.015em; color: var(--color-forest); }
+.enterprise-price { margin-top: 28px; font: 700 clamp(40px, 4.4vw, 56px)/1 var(--font-display); font-stretch: 85%; letter-spacing: -.015em; color: var(--color-forest); }
 
 /* Team */
 .team-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
@@ -221,14 +207,8 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .faq-list details[open] summary::after { transform: rotate(45deg); }
 .faq-list details p { padding-bottom: 22px; max-width: 62ch; }
 
-/* Contact */
-.contact { background: var(--color-forest) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='390' fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'%3E%3Cpath d='M-20 60 230 150 180 330-20 270ZM250 150 540 40 540 250 205 330ZM60-20 235 130 540 20M190 345 150 410M215 345 540 270'/%3E%3C/svg%3E"); color: var(--color-on-dark); }
-.contact-inner { display: flex; flex-direction: column; align-items: flex-start; }
-.contact h2 { color: #fff; }
-.button-whatsapp { gap: 10px; margin-top: 32px; }
+/* Contact: one floating WhatsApp button, always within reach. */
 .icon-solid { fill: currentColor; stroke: none; }
-.contact-number { margin-top: 14px; font-size: 15px; color: rgba(230, 239, 230, .75); }
-.contact a:focus-visible { outline-color: var(--color-maize); }
 .whatsapp-fab { position: fixed; z-index: 15; right: 20px; bottom: 20px; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: #1faa53; color: #fff; box-shadow: 0 8px 24px rgba(10, 38, 24, .35); transition: background-color .15s ease; }
 .whatsapp-fab:hover { background: #17924a; }
 .whatsapp-fab .icon { width: 30px; height: 30px; flex-basis: 30px; }
@@ -287,9 +267,6 @@ body.terms-open { overflow: hidden; }
   .hero-field { position: relative; inset: auto; aspect-ratio: 5 / 4; }
   .faq-layout, .feature-block { grid-template-columns: minmax(0, 1fr); }
   .feature-block-flip .feature-copy { order: 0; }
-  .why-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .why-grid li { padding-block: 20px; }
-  .why-fact, .why-answer { max-width: none; }
   .whatsapp-fab { right: 14px; bottom: 14px; }
   .hero-field::after { background: linear-gradient(180deg, rgba(15, 53, 35, 0) 55%, var(--color-forest) 100%); }
   .hero-copy { width: auto; padding: 8px 20px 28px; }
@@ -313,7 +290,6 @@ body.terms-open { overflow: hidden; }
 @media (max-width: 600px) {
   .hero-actions .button { width: 100%; }
   .measures { grid-template-columns: minmax(0, 1fr); }
-  .plan-card > .button, .button-whatsapp { width: 100%; }
   .data-chip { padding: 7px 11px 8px; }
   .data-chip strong { font-size: 19px; }
   .chip-a { right: 3%; }
