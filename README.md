@@ -2,13 +2,13 @@
 
 ## Description
 
-Landing page for TerraTech, an agricultural solution for managing plots and sensors and viewing soil information. It presents what the sensor measures (moisture, temperature, and nutrients), a feature showcase with screenshots of the Android app, a three-step getting-started guide, Pro and Enterprise plans, the NovaTech team, and frequently asked questions. The page does not collect visitor data. The terms and conditions modal is provisional: its nine sections contain generic draft terms based on the current informational version.
+Landing page for TerraTech, an agricultural solution for managing plots and sensors and viewing soil information. It presents what the sensor measures (moisture, temperature, and nutrients), sourced context figures from INEI, feature blocks with screenshots of the Android app, a three-step getting-started guide, Pro and Enterprise plans, the NovaTech team, and frequently asked questions. Contact happens through WhatsApp links; the page itself does not collect visitor data. The terms and conditions modal is provisional: its nine sections contain generic draft terms based on the current informational version.
 
 ## Technologies Used
 
 - **HTML5:** semantic content structure.
 - **CSS3:** responsive layout and interface styling.
-- **JavaScript:** navigation, translations, and the app feature showcase.
+- **JavaScript:** navigation, translations, and the terms dialog.
 - **Bricolage Grotesque, Inter, and SVG:** self-hosted WOFF2 typography and icons for the visual identity.
 
 ## Project Structure

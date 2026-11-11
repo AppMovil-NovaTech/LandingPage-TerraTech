@@ -4,7 +4,7 @@
 const i18n = (() => {
   let language = "es";
   let dictionaries = null;
-  const controls = [...document.querySelectorAll("[data-lang], [data-screen], .menu-toggle, [data-open-terms]")];
+  const controls = [...document.querySelectorAll("[data-lang], .menu-toggle, [data-open-terms]")];
   controls.forEach(button => { button.disabled = true; });
 
   function t(key) { return dictionaries?.[language]?.[key]; }
