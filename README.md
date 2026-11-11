@@ -37,6 +37,6 @@ LandingPage-TerraTech/
 
 The landing page is available in **Spanish and English** through the **ES / EN** selector. Spanish is the default language, and the user's preference is saved in `localStorage`.
 
-Translations are stored in `public/i18n/es.json` and `public/i18n/en.json`. The native JavaScript engine in `public/js/i18n.js` loads them with `fetch`, applies translations, and manages the language preference without external libraries. Translations cover content, navigation, accessible text, and metadata. App screenshots show the app's English interface.
+Translations are stored in `public/i18n/es.json` and `public/i18n/en.json`. The native JavaScript engine in `public/js/i18n.js` loads them with `fetch`, applies translations, and manages the language preference without external libraries. Translations cover content, navigation, accessible text, and metadata. App screenshots show the app's Spanish interface.
 
 Serve the project over HTTP using Live Server or `python -m http.server 4173 --bind 127.0.0.1`, then open `http://127.0.0.1:4173`. Opening `index.html` directly does not support JSON loading. If loading fails, the original Spanish content remains visible and translation-dependent controls stay disabled.
