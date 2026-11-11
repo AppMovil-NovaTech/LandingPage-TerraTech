@@ -59,7 +59,7 @@ document.addEventListener("keydown", event => {
 document.addEventListener("click", event => {
   if (!event.target.closest(".site-header")) setMenu(false);
 });
-window.matchMedia("(min-width: 1280px)").addEventListener("change", event => {
+window.matchMedia("(min-width: 1080px)").addEventListener("change", event => {
   if (event.matches) setMenu(false);
 });
 function selectScreen(name, moveFocus = false) {
@@ -166,7 +166,7 @@ Object.entries(fields).forEach(([field, { input }]) => {
 const navLinks = [...mainNav.querySelectorAll("[data-nav-link]")];
 let scrollScheduled = false;
 function updateActiveLink() {
-  let active = navLinks[0];
+  let active = null;
   for (const link of navLinks) {
     if (document.querySelector(link.hash).getBoundingClientRect().top <= window.innerHeight * .3) active = link;
   }
