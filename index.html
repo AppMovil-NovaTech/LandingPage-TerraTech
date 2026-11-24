@@ -247,7 +247,7 @@
 <a href="#equipo" data-i18n="nav.team">Equipo</a>
 <a href="#preguntas" data-i18n="nav.faq">Preguntas</a>
 <a class="footer-whatsapp" href="https://wa.me/51922476385?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20TerraTech." target="_blank" rel="noopener noreferrer" data-i18n="cta.whatsapp">Escríbenos por WhatsApp</a></nav></div>
-      <div class="footer-project"><h3 data-i18n="footer.project">El proyecto</h3><button class="terms-trigger" type="button" data-open-terms data-i18n="footer.terms">Términos y condiciones</button><p data-i18n="footer.developed">Desarrollado por NovaTech.</p></div>
+      <div class="footer-project"><h3 data-i18n="footer.project">El proyecto</h3><button class="terms-trigger" type="button" data-open-terms data-i18n="footer.terms">Términos y condiciones</button><a class="terms-pdf-link" href="public/docs/terratech-terminos-y-condiciones.pdf" target="_blank" rel="noopener noreferrer" data-i18n="footer.termsPdf">Términos y condiciones (PDF)</a><p data-i18n="footer.developed">Desarrollado por NovaTech.</p></div>
     </div>
     <div class="footer-bottom"><p>© 2026 TerraTech.</p><a href="https://unsplash.com/photos/RUj5b4YXaHE" target="_blank" rel="noopener noreferrer" data-i18n="footer.photo">Fotografía aérea: Jean Wimmerlin / Unsplash.</a></div>
   </div>
@@ -255,7 +255,10 @@
 <dialog class="terms-dialog" id="terms-modal" aria-labelledby="terms-title" aria-describedby="terms-notice" tabindex="-1">
   <div class="terms-header">
     <h2 id="terms-title" data-i18n="terms.title">Términos y condiciones</h2>
-    <button class="button button-secondary" type="button" data-close-terms data-i18n="terms.close" data-i18n-aria-label="terms.close" aria-label="Cerrar">Cerrar</button>
+    <div class="terms-actions">
+      <a class="button button-secondary" href="public/docs/terratech-terminos-y-condiciones.pdf" target="_blank" rel="noopener noreferrer" data-i18n="terms.downloadPdf">Descargar PDF</a>
+      <button class="button button-secondary" type="button" data-close-terms data-i18n="terms.close" data-i18n-aria-label="terms.close" aria-label="Cerrar">Cerrar</button>
+    </div>
   </div>
   <p id="terms-notice" class="terms-notice" data-i18n="terms.notice">Borrador de condiciones de uso para la versión informativa de TerraTech.</p>
   <p class="terms-updated" data-i18n="terms.updated">Última actualización: 10 de noviembre de 2026</p>
